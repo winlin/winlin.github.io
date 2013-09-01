@@ -1,0 +1,33 @@
+---
+layout: page
+title: I just wanna live while I am alive
+comments: false
+---
+
+{% include JB/setup %}
+
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p class="author">
+    <span class="date">{{ post.date }}</span>
+  </p>
+  <div class="content">
+    {{ post.content }}
+  </div>
+{% endfor %}
+
+<!-- Pagination links -->
+<div class="pagination" style="height:50px;text-align:center;font-size:25px;">
+  {% if paginator.previous_page %}
+    <a href="/page{{ paginator.previous_page }}" class="previous"><=<-</a>
+  {% else %}
+    <span class="previous"><=<-</span>
+  {% endif %}
+  <span class="page_number "> [{{ paginator.page }}--{{ paginator.total_pages }}] </span>
+  {% if paginator.next_page %}
+    <a href="/page{{ paginator.next_page }}" class="next">->=></a>
+  {% else %}
+    <span class="next ">->=></span>
+  {% endif %}
+</div>
