@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The First Artical"
-descripion: "Just for public test"
+description: "Just for public test"
 categories: 
 tags: 
 ---

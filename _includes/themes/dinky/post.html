@@ -1,7 +1,8 @@
 <section>
   <h1>{{ page.title }}</h1>
-
+  <p class="author"; align="right">
+    <span class="date">{{ page.date | date:"%d-%m-%Y"}}</span>
+  </p>
   {{ content }}
-
   {% include JB/comments %}
 </section>

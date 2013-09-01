@@ -9,10 +9,9 @@ comments: false
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <p>{{ post.excerpt }}</p>
-  <p class="author">
-    <span class="date">{{ post.date }}</span>
-  </p>
+  <p><big>{{ post.date | date:"%d-%m-%Y"}}<big>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          {{ post.description }}</p> 
 {% endfor %}
 
 <!-- Pagination links -->
