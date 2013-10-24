@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Git Learning Notes(Test for Jekyll)"
+title: "Git Learning Notes"
 description: "Contain the note of git"
-categories: [Git, Text]
+category: Git
 tags: 
 ---
 {% include JB/setup %}
