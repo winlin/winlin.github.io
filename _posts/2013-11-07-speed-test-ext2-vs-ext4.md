@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Speed Test Ext2 VS Ext4"
-description: ""
-categorise: { Testing, Linux, Shell }
-tags: []
+description: "Speed Test Ext2 VS Ext4"
+categories: [Shell, Testing]
+tags: 
 ---
 {% include JB/setup %}
 
@@ -15,7 +15,7 @@ tags: []
 * extent format more robust in face of on-disk corruption due to magics,
 * internal redundancy in tree
 * improved file allocation (multi-block alloc)
-* lift 32000 subdirectory limit imposed by i_links_count[1]
+* lift 32000 subdirectory limit imposed by i_links_count
 * nsec timestamps for mtime, atime, ctime, create time
 * inode version field on disk (NFSv4, Lustre)
 * reduced e2fsck time via uninit_bg feature
@@ -30,8 +30,6 @@ tags: []
 * efficient new ordered mode in JBD2 and ext4(avoid using buffer head to force
   the ordering)
 
-[1] Filesystems with a block size of 1k may see a limit imposed by the
-directory hash tree having a maximum depth of two.  
 
 首先，有一点是十分明确地：Ext2由于没有journal功能，所以，其读写速度应当高于Ext4, 但是也正是因为此，当系统突然断电，进行fsck时，会对整个文件系统进行检查，会占用很长的时间；此外，数据的完整性也缺乏保障。 虽然，现在的Android手机分区都会使用Ext4文件系统，但是，为了追求最高的性能，还得对Ext2进行对比以后才能做出最后的决定。  
 对于二者的比较，网上也有其他比较，有的比较结果显示Ext4不论是否在开启journal功能时，读写速度都会比Eext要好，其中使用IOZone benchmark工具进行的[比较](http://en.community.dell.com/techcenter/high-performance-computing/w/wiki/2290.aspx)如下一项比较如下：  
