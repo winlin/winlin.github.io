@@ -2,7 +2,7 @@
 layout: post
 title: "Speed Test Ext2 VS Ext4"
 description: "Speed Test Ext2 VS Ext4"
-categories: [Shell, Testing]
+category: Testing
 tags: 
 ---
 {% include JB/setup %}
