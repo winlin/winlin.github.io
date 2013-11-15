@@ -16,7 +16,7 @@ tags: []
     First Responder将随着用户与界面的交互而变化。它的IB属性为placeholders，这意味这它属于一个虚拟实例，就不如textfield的string placeholders一样只是临时显示一下。真正的First Responder会被其他对象代替。实际上，任何派生自NSResponder类的对象都可以作为First Responder。而First Responder里面所有的Action就是NSResponder提供的或者自定义的响应函数。   
     MacOS在系统内部会维护一个称为“The Responder Chain”的链表。该列表内容为Responder对象实例，它们会对各种系统事件做出响应。最上面的那个对象就叫做First Responder，它是最先接收到系统事件的对象。如果该对象不处理改事件，系统会将这个事件向下传递，直到找到响应事件的对象，我们可以理解为该事件被该对象截取。  
     The Responder Chain基本结构如下图所示：  
-    ![](/image/ios_responder_chain.png)
+    ![](/images/ios_responder_chain.png)
 
 3. 线程安全     
  	Mutable container is not thread safe  
@@ -25,7 +25,7 @@ tags: []
   
 4. Subclass 和Category    
    先说一下这2个特性最主要的区别。简单可以这么理解，subclass体现了类的上下级关系，而category是类间的平级关系。  
-    ![](/image/categary_subclass.png)   
+    ![](/images/categary_subclass.png)   
  	
     Category methods should not override existing methods (class or instance).  
     Two different categories implementing the same method results in undefined behavior.    
