@@ -60,7 +60,7 @@ NSBezierPath *p=[NSBezierPath bezierPathWithRect:rect];
 
 ###Core Graphics 
 Core Graphics 是 Cocoa Drawing layer 的底层技术，在 iOS 开发中非常普遍，因为 iOS 系统中并不存在 Cocoa layer 所以网上可以找到的多是 Core Graphics 绘制代码段子，这给那些不了解 Mac 开发的新手来说造成了很大困扰。  
-Cocoa 是 Mac OS 下的 application framework 而 iOS 下的 application framework 则是 UIKit.framework又叫 Cocoa Touch，它们分享部分代码基础但又不完全一样。例如，Cocoa Touch 下的 UIView 的渲染上下文会使用 UIGraphicsGetCurrentContext() 取得，它得到的是一个 CGContextRef 指针，而在 NSView 里多用 [NSGraphicsContext currentContext] 取得渲染上下文。它得到的是一个 NSGraphicsContext 对象。当然 NSView 里也可以通过    
+Cocoa 是 Mac OS 下的 application framework 而 iOS 下的 application framework 则是 UIKit.framework又叫 Cocoa Touch，它们分享部分代码基础但又不完全一样。例如，Cocoa Touch 下的 UIView 的渲染上下文会使用 UIGraphicsGetCurrentContext() 取得，它得到的是一个 CGContextRef 指针，而在 NSView 里多用``` [NSGraphicsContext currentContext]``` 取得渲染上下文。它得到的是一个 NSGraphicsContext 对象。当然 NSView 里也可以通过    
 
 	CGContextRef ctx = [[NSGraphicsContext currentContext] graphicsPort];    
 
